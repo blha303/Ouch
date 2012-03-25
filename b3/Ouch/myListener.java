@@ -13,6 +13,7 @@ public class myListener implements Listener{
 		Player p = event.getPlayer();
 		p.sendMessage("Ouch.");
 	}
+	@EventHandler
 	public void blockPlace(BlockPlaceEvent event){
 		Player p = event.getPlayer();
 		p.sendMessage("Ahhhhh.....");
