@@ -1,4 +1,4 @@
-package b3.Ouch;
+package cocc.blha303.Ouch;
 
 import java.util.logging.Logger;
 
