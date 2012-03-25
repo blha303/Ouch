@@ -1,4 +1,4 @@
-package cocc.blha303.Ouch;
+package cc.co.blha303.Ouch;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
