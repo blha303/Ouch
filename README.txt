@@ -1,0 +1,1 @@
+Build with bukkit.jar. Should work with any build.
