@@ -14,13 +14,13 @@ public class myListener implements Listener{
 	public void blockBreak(BlockBreakEvent event){
 		Player p = event.getPlayer();
 		p.sendMessage("Ouch.");
-		Ouch.getServer().getConsoleSender().sendMessage("Ouch.");
+		plugin.getServer().getConsoleSender().sendMessage("Ouch.");
 	}
 	@EventHandler
 	public void blockPlace(BlockPlaceEvent event){
 		Player p = event.getPlayer();
 		p.sendMessage("Ahhhhh.....");
-		Ouch.getServer().getConsoleSender().sendMessage("Ahhhhh.....");
+		plugin.getServer().getConsoleSender().sendMessage("Ahhhhh.....");
 	}
 	private Ouch plugin; 
 	public myListener(Ouch instance) { 
