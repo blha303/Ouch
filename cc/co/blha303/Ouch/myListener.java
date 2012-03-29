@@ -15,7 +15,8 @@ public class myListener implements Listener{
 	}
 	@EventHandler
 	public void blockPlace(BlockPlaceEvent event){
+		String b = event.getBlockPlaced().getType().toString().toLowerCase();
 		Player p = event.getPlayer();
-		p.sendMessage("Ahhhhh.....");
+		p.sendMessage("Ahhhhh....." + b + "!");
 	}
 }
