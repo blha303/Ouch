@@ -1,3 +1,15 @@
 name: Ouch
 main: me.blha303.Ouch
 version: 11
+permissions:
+    ouch.*:
+        description: Turns on all block messages from Ouch.
+        children:
+            ouch.break: true
+            ouch.place: true
+    ouch.break:
+        description: Makes a player see the configured block break message.
+        default: false
+    ouch.place:
+        description: Makes a player see the configured block place message.
+        default: false

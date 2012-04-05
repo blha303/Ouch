@@ -14,12 +14,24 @@ public class myListener implements Listener{
     @EventHandler
 	public void blockBreak(BlockBreakEvent event){
         Player p = event.getPlayer();
-		p.sendMessage("Ouch.");
-	}
+        if(p.hasPermission("ouch.break")){
+		    p.sendMessage("Ouch.");
+        }else{
+        	exit();
+        }
+    }
 	@EventHandler
 	public void blockPlace(BlockPlaceEvent event){
 		String b = event.getBlockPlaced().getType().toString().toLowerCase();
 		Player p = event.getPlayer();
-		p.sendMessage("Ahhhhh....." + b + "!");
+		if(p.hasPermission("ouch.place")){
+		    p.sendMessage("Ahhhhh....." + b + "!");
+		}else{
+			exit();
+		}
+	}
+	private boolean exit() {
+		return false;
+		
 	}
 }
