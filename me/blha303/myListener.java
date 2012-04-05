@@ -5,12 +5,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-
+// The listener originally pulled the messages from config.yml, like
+// Ouch.java. Sadly, I could never get that to work. If you do, please
+// submit it as a pull request. If not, modify this file and recompile
+// if you want to localize this part of the plugin.
 public class myListener implements Listener{
-
-	@EventHandler
+	
+    @EventHandler
 	public void blockBreak(BlockBreakEvent event){
-		Player p = event.getPlayer();
+        Player p = event.getPlayer();
 		p.sendMessage("Ouch.");
 	}
 	@EventHandler

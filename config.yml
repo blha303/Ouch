@@ -1,13 +1,4 @@
-lang: #english
+lang:
     name: Ouch
     disable: is now disabled.
     enable: Enabled.
-    break: Ouch.
-    place: Ahhhhh.....
-
-#lang: #french
-#    name: Aie
-#    disable: est maintenant désactivé
-#    enable: Activé
-#    break: Aie.
-#    place: Ahhhhh.....

@@ -2,7 +2,8 @@ package me.blha303;
 
 import java.util.logging.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
-
+// Messages in this part of the plugin can be modified in 
+// config.yml (with the exception of the Loading message).
 public class Ouch extends JavaPlugin {
 	
 	public static Ouch plugin;
