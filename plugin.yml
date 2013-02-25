@@ -1,6 +1,6 @@
 name: Ouch
 main: me.blha303.Ouch
-version: 11
+version: 12
 permissions:
     ouch.*:
         description: Turns on all block messages from Ouch.
@@ -13,3 +13,10 @@ permissions:
     ouch.place:
         description: Makes a player see the configured block place message.
         default: false
+    ouch.command:
+        description: Lets a player turn Ouch on or off.
+        default: op
+commands:
+    ouch:
+        description: Enable/disable Ouch
+        usage: /ouch (on|off)
