@@ -26,33 +26,27 @@ public class Ouch extends JavaPlugin implements Listener {
 	@EventHandler
 	public void blockPlace(BlockPlaceEvent event) {
 		if (event.getPlayer().hasPermission("ouch.place")) {
-			event.getPlayer().sendMessage(String.format("Ahhhhh..... %s!", event.getBlockPlaced().getType().toString().toLowerCase()));
+			event.getPlayer().sendMessage(String.format("Ahhhhh..... %s!", event.getBlockPlaced().getType().toString().toLowerCase().replace('_', ' ')));
 		}
 	}
 
-	public boolean onCommand(CommandSender sender, Command cmd, String label,
-			String[] args) {
-		boolean allowuse = false;
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (sender.hasPermission("ouch.command")) {
-			allowuse = true;
-		}
-		if (allowuse) {
 			if (args.length == 1) {
-				if (args[0] == "on") {
+				if (args[0].equalsIgnoreCase("on")) {
 					if (getServer().getPluginManager().getPlugin(getDescription().getName()) == null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already enabled.");
 					}
-					return true;
-				} else if (args[0] == "off") {
+				} else if (args[0].equalsIgnoreCase("off")) {
 					if (getServer().getPluginManager().getPlugin(getDescription().getName()) != null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already disabled.");
 					}
-					return true;
 				}
+				return true;
 			}
 			return false;
 		} else {
