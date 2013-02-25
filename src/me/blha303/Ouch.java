@@ -15,17 +15,21 @@ public class Ouch extends JavaPlugin implements Listener {
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 	}
-	
-    @EventHandler
-	public void blockBreak(BlockBreakEvent event){
-        if(event.getPlayer().hasPermission("ouch.break")){
-        	event.getPlayer().sendMessage("Ouch.");
-        }
-    }
+
 	@EventHandler
-	public void blockPlace(BlockPlaceEvent event){
-		if(event.getPlayer().hasPermission("ouch.place")){
-			event.getPlayer().sendMessage("Ahhhhh....." + event.getBlockPlaced().getType().toString().toLowerCase() + "!");
+	public void blockBreak(BlockBreakEvent event) {
+		if (event.getPlayer().hasPermission("ouch.break")) {
+			event.getPlayer().sendMessage("Ouch.");
+		}
+	}
+
+	@EventHandler
+	public void blockPlace(BlockPlaceEvent event) {
+		if (event.getPlayer().hasPermission("ouch.place")) {
+			event.getPlayer().sendMessage(
+					"Ahhhhh....."
+							+ event.getBlockPlaced().getType().toString()
+									.toLowerCase() + "!");
 		}
 	}
 
@@ -33,19 +37,21 @@ public class Ouch extends JavaPlugin implements Listener {
 			String[] args) {
 		boolean allowuse = false;
 		if (sender.hasPermission("ouch.command")) {
-				allowuse = true;
+			allowuse = true;
 		}
 		if (allowuse) {
 			if (args.length == 1) {
 				if (args[0] == "on") {
-					if (getServer().getPluginManager().getPlugin(getDescription().getName()) == null) {
+					if (getServer().getPluginManager().getPlugin(
+							getDescription().getName()) == null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already enabled.");
 					}
 					return true;
 				} else if (args[0] == "off") {
-					if (getServer().getPluginManager().getPlugin(getDescription().getName()) != null) {
+					if (getServer().getPluginManager().getPlugin(
+							getDescription().getName()) != null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already disabled.");
