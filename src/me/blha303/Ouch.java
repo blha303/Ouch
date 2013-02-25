@@ -26,10 +26,7 @@ public class Ouch extends JavaPlugin implements Listener {
 	@EventHandler
 	public void blockPlace(BlockPlaceEvent event) {
 		if (event.getPlayer().hasPermission("ouch.place")) {
-			event.getPlayer().sendMessage(
-					"Ahhhhh....."
-							+ event.getBlockPlaced().getType().toString()
-									.toLowerCase() + "!");
+			event.getPlayer().sendMessage(String.format("Ahhhhh..... %s!", event.getBlockPlaced().getType().toString().toLowerCase()));
 		}
 	}
 
@@ -42,16 +39,14 @@ public class Ouch extends JavaPlugin implements Listener {
 		if (allowuse) {
 			if (args.length == 1) {
 				if (args[0] == "on") {
-					if (getServer().getPluginManager().getPlugin(
-							getDescription().getName()) == null) {
+					if (getServer().getPluginManager().getPlugin(getDescription().getName()) == null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already enabled.");
 					}
 					return true;
 				} else if (args[0] == "off") {
-					if (getServer().getPluginManager().getPlugin(
-							getDescription().getName()) != null) {
+					if (getServer().getPluginManager().getPlugin(getDescription().getName()) != null) {
 						getServer().getPluginManager().enablePlugin(this);
 					} else {
 						sender.sendMessage("Plugin already disabled.");
